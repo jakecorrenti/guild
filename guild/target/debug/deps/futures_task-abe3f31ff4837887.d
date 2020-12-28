@@ -1,0 +1,11 @@
+/Users/jakecorrenti/guild/guild/target/debug/deps/futures_task-abe3f31ff4837887.rmeta: /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/lib.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/spawn.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/future_obj.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/noop_waker.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/arc_wake.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/waker.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/waker_ref.rs
+
+/Users/jakecorrenti/guild/guild/target/debug/deps/futures_task-abe3f31ff4837887.d: /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/lib.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/spawn.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/future_obj.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/noop_waker.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/arc_wake.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/waker.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/waker_ref.rs
+
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/lib.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/spawn.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/future_obj.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/noop_waker.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/arc_wake.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/waker.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.8/src/waker_ref.rs:

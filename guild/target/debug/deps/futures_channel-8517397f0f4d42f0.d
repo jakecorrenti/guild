@@ -1,0 +1,10 @@
+/Users/jakecorrenti/guild/guild/target/debug/deps/futures_channel-8517397f0f4d42f0.rmeta: /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/lib.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/lock.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/mod.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/queue.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/sink_impl.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/oneshot.rs
+
+/Users/jakecorrenti/guild/guild/target/debug/deps/futures_channel-8517397f0f4d42f0.d: /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/lib.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/lock.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/mod.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/queue.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/sink_impl.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/oneshot.rs
+
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/lib.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/lock.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/mod.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/queue.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/mpsc/sink_impl.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.8/src/oneshot.rs:
