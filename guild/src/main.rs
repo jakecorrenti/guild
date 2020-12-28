@@ -5,5 +5,6 @@ use clap::App;
 fn main() {
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
-    println!("Hello, world!");
+
+    guild::run(&matches);
 }

@@ -6,8 +6,6 @@ author: Jake Correnti <jcorrenti13@gmail.com>
 subcommands:
   - post: 
       about: Post a code snippet to Discord
-      version: "0.1"
-      author: Jake Correnti <jcorrenti13@gmail.com>
 
       args: 
         - filename: 
@@ -22,3 +20,11 @@ subcommands:
             help: the ending line in the range of lines the snippet contains
             index: 3
             required: true
+        - hl:
+            help: enable syntax highlighting for the Discord message
+            long: hl
+            short: H
+            requires: 
+              - filename
+              - start
+              - end
