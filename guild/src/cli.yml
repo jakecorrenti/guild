@@ -1,0 +1,24 @@
+name: guild
+version: "1.0"
+about: "A CLI tool that allows you to submit code snippets to a discord channel"
+author: Jake Correnti <jcorrenti13@gmail.com>
+
+subcommands:
+  - post: 
+      about: Post a code snippet to Discord
+      version: "0.1"
+      author: Jake Correnti <jcorrenti13@gmail.com>
+
+      args: 
+        - filename: 
+            help: file where the code snippet comes from
+            index: 1
+            required: true
+        - start:
+            help: the starting line in the range of lines the snippet contains
+            index: 2
+            required: true
+        - end: 
+            help: the ending line in the range of lines the snippet contains
+            index: 3
+            required: true
