@@ -9,20 +9,20 @@ subcommands:
 
       args: 
         - filename: 
-            help: file where the code snippet comes from
+            help: File where the code snippet comes from
             index: 1
             required: true
         - start:
-            help: the starting line in the range of lines the snippet contains
+            help: The starting line in the range of lines the snippet contains
             index: 2
             required: true
         - end: 
-            help: the ending line in the range of lines the snippet contains
+            help: The ending line in the range of lines the snippet contains
             index: 3
             required: true
         - hl:
-            help: enable syntax highlighting for the Discord message
-            long: hl
+            help: Enables syntax highlighting for the Discord message
+            long: highlight
             short: H
             requires: 
               - filename
