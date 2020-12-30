@@ -1,10 +1,17 @@
 use clap::ArgMatches;
 
-mod discord; 
 mod arg_parser;
+mod discord;
 
 pub async fn run(args: &ArgMatches<'_>) -> Result<(), Box<dyn std::error::Error>> {
-    let snippet = arg_parser::retrieve_snippet(args)?;
-    discord::execute_webhook(&snippet[..]).await?;
+    match args.subcommand_name() {
+        Some("post") => {
+            let snippet = arg_parser::retrieve_snippet(args)?;
+            discord::execute_webhook(&snippet[..]).await?;
+        }
+        Some("set") => arg_parser::set_webhook_info(args).await?,
+        _ => unreachable!(),
+    }
+
     Ok(())
 }
