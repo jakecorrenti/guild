@@ -4,6 +4,15 @@ about: "A CLI tool that allows you to submit code snippets to a discord channel"
 author: Jake Correnti <jcorrenti13@gmail.com>
 
 subcommands:
+  - set: 
+      about: Set the required information to access the Discord channel
+
+      args: 
+        - url:
+            help: The Webhook URL for the Discord channel
+            index: 1
+            required: true
+
   - post: 
       about: Post a code snippet to Discord
 
