@@ -1,8 +1,8 @@
 use super::discord;
 use clap::ArgMatches;
-use std::{fs, process};
+use std::{error::Error, fs, process};
 
-pub async fn set_webhook_info(args: &ArgMatches<'_>) -> Result<(), Box<dyn std::error::Error>> {
+pub async fn set_webhook_info(args: &ArgMatches<'_>) -> Result<(), Box<dyn Error>> {
     let url_matches = args.subcommand_matches("set").unwrap();
     let url_contents: Vec<&str> = url_matches.value_of("url").unwrap().split("/").collect();
     let guild_data = &url_contents[url_contents.len() - 2..];
@@ -20,7 +20,7 @@ pub async fn set_webhook_info(args: &ArgMatches<'_>) -> Result<(), Box<dyn std::
     Ok(())
 }
 
-pub fn retrieve_snippet(args: &ArgMatches) -> Result<String, Box<dyn std::error::Error>> {
+pub fn retrieve_snippet(args: &ArgMatches) -> Result<String, Box<dyn Error>> {
     /*
      * can unwrap these two because they are all required in order for parsing to be valid. If
      * they are not provided, the parser will panick and provide a default error message
@@ -82,7 +82,7 @@ fn determine_hl_type(filename: &str) -> String {
     String::new()
 }
 
-fn persist_webhook_data(id: &str, token: &str) -> Result<(), Box<dyn std::error::Error>> {
+fn persist_webhook_data(id: &str, token: &str) -> Result<(), Box<dyn Error>> {
     fs::write("id.txt", id)?;
     fs::write("token.txt", token)?;
     Ok(())
