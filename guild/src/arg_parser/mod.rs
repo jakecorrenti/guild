@@ -48,14 +48,20 @@ pub fn retrieve_snippet(args: &ArgMatches) -> Result<String, Box<dyn Error>> {
         process::exit(1);
     }
 
-    let mut snippet_lines = Vec::new();
+    let mut snippet_lines: Vec<&str> = Vec::new();
     let filtered = file_contents
         .iter()
         .enumerate()
         .filter(|(idx, _)| (idx + 1) >= start && idx < &end);
 
-    // TODO check if the hl arg is present and push the header accordingly
-    snippet_lines.push("```");
+    let hl_header; 
+    if post_matches.is_present("hl") {
+        hl_header = format!("```{}", determine_hl_type(&filename)).clone();
+        snippet_lines.push(&hl_header[..]);
+    } else {
+        snippet_lines.push("```");
+    }
+
     filtered.for_each(|line| snippet_lines.push(&line.1));
     snippet_lines.push("```");
 
@@ -70,16 +76,12 @@ pub fn retrieve_snippet(args: &ArgMatches) -> Result<String, Box<dyn Error>> {
     Ok(complete_snippet)
 }
 
-// TODO
 fn determine_hl_type(filename: &str) -> String {
-    /*
-     * examples:
-     * .rs  => rust
-     * .c   => c
-     * .js  => javascript
-     * .cpp => cpp
-     */
-    String::new()
+    let split: Vec<&str> = filename.split("/").collect();
+    let used_file = split.last();
+    let file_components: Vec<&str> = used_file.unwrap().split(".").collect();
+    let file_extension = file_components.last().unwrap();
+    String::from(*file_extension)
 }
 
 fn persist_webhook_data(id: &str, token: &str) -> Result<(), Box<dyn Error>> {
