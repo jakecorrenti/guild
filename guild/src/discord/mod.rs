@@ -1,14 +1,12 @@
 extern crate serenity;
 use serenity::http::Http;
+use std::{error::Error, fs};
 
-pub async fn execute_webhook(contents: &str) -> Result<(), Box<dyn std::error::Error>> {
-    // TODO: retrieve the token and id values from the persisted files. if they don't exist kill
-    // the process and throw an error
-    let id: u64 = 793574437340577803;
-    let token = "Ra_txBa5RMTlZyZfviTtZIGlsjAvfNrOnPhaaPJmf62sq1EJFXznGGAGu4CZCHm6Tdpj";
+pub async fn execute_webhook(contents: &str) -> Result<(), Box<dyn Error>> {
+    let (id, token) = get_webhook_data()?;
 
-    let http = Http::new_with_token(token);
-    let webhook = http.get_webhook_with_token(id, token).await?;
+    let http = Http::new_with_token(&token[..]);
+    let webhook = http.get_webhook_with_token(id, &token[..]).await?;
 
     webhook
         .execute(&http, false, |w| {
@@ -20,7 +18,7 @@ pub async fn execute_webhook(contents: &str) -> Result<(), Box<dyn std::error::E
     Ok(())
 }
 
-pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn std::error::Error>> {
+pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn Error>> {
     let http = Http::new_with_token(token);
     let _ = http
         .get_webhook_with_token(
@@ -30,4 +28,14 @@ pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn std::err
         )
         .await?;
     Ok(())
+}
+
+fn get_webhook_data() -> Result<(u64, String), Box<dyn std::error::Error>> {
+    // to determine if the files exist, will fail if they don't and throw an error
+    let _ = fs::File::open("id.txt")?;
+    let _ = fs::File::open("token.txt")?;
+
+    let id = fs::read_to_string("id.txt").unwrap().parse::<u64>()?;
+    let token = fs::read_to_string("token.txt")?;
+    Ok((id, token))
 }
