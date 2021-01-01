@@ -23,7 +23,7 @@ pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn Error>> 
     let _ = http
         .get_webhook_with_token(
             id.parse::<u64>()
-                .expect("The URL provided is not a valid Discord Webhook"),
+                .expect("You did not provide a valid Discord Webhook URL"),
             token,
         )
         .await?;
@@ -32,17 +32,24 @@ pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn Error>> 
 
 fn get_webhook_data() -> Result<(u64, String), Box<dyn std::error::Error>> {
     // to determine if the files exist, will fail if they don't and throw an error
-    // TODO: better error messages when either id, token, or both do not exist
-    let _ = fs::File::open("id.txt")?;
-    let _ = fs::File::open("token.txt")?;
+    let open_err_message = "There is no Discord Webhook URL set";
+    let _ = fs::File::open("id.txt").expect(open_err_message);
+    let _ = fs::File::open("token.txt").expect(open_err_message);
 
-    let id = fs::read_to_string("id.txt").unwrap().parse::<u64>()?;
-    let token = fs::read_to_string("token.txt")?;
+    let read_err_message = "There was an error accessing your Discord Webhook information";
+    let id = fs::read_to_string("id.txt")
+        .unwrap()
+        .parse::<u64>()
+        .expect(read_err_message);
+
+    let token = fs::read_to_string("token.txt").expect(read_err_message);
+
     Ok((id, token))
 }
 
 pub fn persist_webhook_data(id: &str, token: &str) -> Result<(), Box<dyn Error>> {
-    fs::write("id.txt", id)?;
-    fs::write("token.txt", token)?;
+    let err_message = "There was an error persisting you're Discord Webhook information";
+    fs::write("id.txt", id).expect(err_message);
+    fs::write("token.txt", token).expect(err_message);
     Ok(())
 }

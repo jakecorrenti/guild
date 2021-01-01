@@ -1,0 +1,11 @@
+/Users/jakecorrenti/guild/guild/target/release/deps/libasync_trait-48f69cdbf39d3d84.dylib: /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/lib.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/args.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/expand.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/lifetime.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/parse.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/receiver.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/respan.rs
+
+/Users/jakecorrenti/guild/guild/target/release/deps/async_trait-48f69cdbf39d3d84.d: /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/lib.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/args.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/expand.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/lifetime.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/parse.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/receiver.rs /Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/respan.rs
+
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/lib.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/args.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/expand.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/lifetime.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/parse.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/receiver.rs:
+/Users/jakecorrenti/.cargo/registry/src/github.com-1ecc6299db9ec823/async-trait-0.1.42/src/respan.rs:
