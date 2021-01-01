@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/jakecorrenti/guild/guild/target/release/build/typenum-e32667aae7b99db7/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/jakecorrenti/guild/guild/target/release/build/typenum-e32667aae7b99db7/out/op.rs
