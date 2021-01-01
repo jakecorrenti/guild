@@ -32,10 +32,17 @@ pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn Error>> 
 
 fn get_webhook_data() -> Result<(u64, String), Box<dyn std::error::Error>> {
     // to determine if the files exist, will fail if they don't and throw an error
+    // TODO: better error messages when either id, token, or both do not exist
     let _ = fs::File::open("id.txt")?;
     let _ = fs::File::open("token.txt")?;
 
     let id = fs::read_to_string("id.txt").unwrap().parse::<u64>()?;
     let token = fs::read_to_string("token.txt")?;
     Ok((id, token))
+}
+
+pub fn persist_webhook_data(id: &str, token: &str) -> Result<(), Box<dyn Error>> {
+    fs::write("id.txt", id)?;
+    fs::write("token.txt", token)?;
+    Ok(())
 }

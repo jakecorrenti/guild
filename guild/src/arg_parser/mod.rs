@@ -15,7 +15,7 @@ pub async fn set_webhook_info(args: &ArgMatches<'_>) -> Result<(), Box<dyn Error
         process::exit(1);
     }
 
-    persist_webhook_data(&id, &token)?;
+    discord::persist_webhook_data(&id, &token)?;
 
     Ok(())
 }
@@ -82,10 +82,4 @@ fn determine_hl_type(filename: &str) -> String {
     let file_components: Vec<&str> = used_file.unwrap().split(".").collect();
     let file_extension = file_components.last().unwrap();
     String::from(*file_extension)
-}
-
-fn persist_webhook_data(id: &str, token: &str) -> Result<(), Box<dyn Error>> {
-    fs::write("id.txt", id)?;
-    fs::write("token.txt", token)?;
-    Ok(())
 }
