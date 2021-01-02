@@ -30,7 +30,7 @@ pub async fn valid_webhook(id: &str, token: &str) -> Result<(), Box<dyn Error>> 
     Ok(())
 }
 
-fn get_webhook_data() -> Result<(u64, String), Box<dyn std::error::Error>> {
+fn get_webhook_data() -> Result<(u64, String), Box<dyn Error>> {
     // to determine if the files exist, will fail if they don't and throw an error
     let open_err_message = "There is no Discord Webhook URL set";
     let _ = fs::File::open("id.txt").expect(open_err_message);
