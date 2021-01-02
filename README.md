@@ -1,4 +1,4 @@
-## guild
+# guild
 
 Guild is a Command Line Interface build with Rust that posts code snippets to a Discord channel using Webhooks.
 
