@@ -8,7 +8,7 @@ description = "Guild is a Command Line Interface build with Rust that posts code
 readme = "README.md"
 homepage = "https://github.com/jakecorrenti/guild"
 repository = "https://github.com/jakecorrenti/guild"
-keyowrds = ["cli", "discord", "webhooks"]
+keywords = ["cli", "discord", "webhooks"]
 categories = ["command-line-utilities", "discord", "webhooks"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
