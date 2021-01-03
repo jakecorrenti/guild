@@ -1,10 +1,10 @@
 # guild
 
-Guild is a Command Line Interface build with Rust that posts code snippets to a Discord channel using Webhooks.
+Guild is a Command Line Utility built with Rust that posts code snippets from a file to a Discord channel using Webhooks.
 
 # How does it work?
 
-Guild works by utilizing [Serenity](https://www.github.com/serenity-rs/serenity) to access the Discord API. In order to communicate with a specified Discord text channel, Guild uses Discord Webhooks to send the code snippets from a specified file to the channel.
+By utilizing [Serenity](https:://www.github.com/serenity-rs/serenity) to access the Discord API, guild communicates with your Discord server using Webhooks. This allows guild to post a message to Discord on its own without having to type anything into Discord itself.
 
 # Download
 
