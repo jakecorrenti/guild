@@ -1,6 +1,6 @@
 # guild
 
-Guild is a Command Line Utility built with Rust that posts code snippets from a file to a Discord channel using Webhooks.
+Guild is a Command Line Utility that allows you to post code snippets from a file to a Discord channel.
 
 # How does it work?
 
