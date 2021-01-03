@@ -51,3 +51,7 @@ cargo install guild
         ```bash
         guild post <file path> <starting line> <ending line> --highlight
         ```
+    - Example:
+        ```bash
+        guild post main.c 1 5 -H
+        ```
