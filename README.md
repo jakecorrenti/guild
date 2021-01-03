@@ -42,3 +42,9 @@ cargo install guild
         ```bash
         guild post main.c 1 5 -H
         ```
+## Commands
+- `set`: Set the Discord Webhook URL
+- `post`: Post a code snippet to the set Discord channel
+## Flags
+- `help`: See the possible commands and flags that are supported by guild
+- `highlight`: Enable syntax highlighting for the code snippet
