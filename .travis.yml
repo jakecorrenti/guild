@@ -79,11 +79,13 @@ matrix:
       os: osx
       rust: nightly
 
+before_deploy:
+      # Set up git user name and tag this commit
+      - git config --local user.name "jakecorrenti"
+      - git config --local user.email "jcorrenti13@outlook.com"
+      - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+      - git tag $TRAVIS_TAG
 deploy:
-  # TODO update `api_key.secure`
-  # - Create a `public_repo` GitHub token. Go to: https://github.com/settings/tokens/new
-  # - Encrypt it: `travis encrypt 0123456789012345678901234567890123456789
-  # - Paste the output down here
   api_key:
     secure: QJZUWv0Mi37SSH/uLlNoqLoqBUm5K5roEWlPvBnSkf7hoJ7R6HxjIKfgDoLTIDo9eIn0LdpYY7ehAyLhyBZai+hyz1YqRLv/u02SUW2HVSVCjulOAK2KFEcUYV5KEWHvyiiX8qBFh5NrfDrMVKgbL1bOvZ81av+xOBcDbDAzors8psPAcZ14HthHMAmjJ3tzM/PEmh9FPgdiUpceYswgBT9NcIaeePm6ew1RLm7zm19P372QdepdJrqTqGpxP4DafkamlU3XCWRbdZZWQinZ9VzT5CZZ3DAnsVsZpQWqwg5XpTZRNmXkj987y0msYfLZ9aemuDduACQzo2YcIl4W7yKFYzNvxRMbJzg0+2Z64rQ5kr4szRYY1fHV6MeFjn/WMqIK0HCclp0j4njF8el5t2LIeXPDqUkzHEI2pBY2D1/tE40JZndmHB5aQ5mZTpz4GoL3tRgs3aS4SOwtDlKMtxjHmCCAzeZspAttAeytZJ9yWX/izakBbzX7zUSOQtb32/T//yV9FeK2Tbm4K15t357ZmPgT3p7yxwaYMgCu5X7H309tYVa9Gnr7shrF9+7MNg03XS+hS1AeHlgGh7C2KM0obqZcSGJ0G/Yut8nlG+Uvr61ZGICIEmJ5j7M5Qavfz3vWSJV8N3NBo3rWQ7yl/2lVWURgMTqPn4SLd6Gmbkg=
   file_glob: true
