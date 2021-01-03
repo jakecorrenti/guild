@@ -19,7 +19,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 #### Windows
 Download the following executable and follow the setup instructions: [rustup-init.exe](https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe)
 
-
 If the downloads go well, you will see the following message: 
 ```
 Rust is installed now. Great!
