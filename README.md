@@ -40,7 +40,7 @@ cargo install guild
     ```
 3. Post your desired code snippet to the Discord server: 
     ```bash
-    guid post <file path> <starting line> <ending line>
+    guild post <file path> <starting line> <ending line>
     ```
     - If you would like the code snippet to have syntax highlighting, add the following flag at the end of your command:
         ```bash
