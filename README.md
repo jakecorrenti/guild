@@ -44,10 +44,10 @@ cargo install guild
     guid post <file path> <starting line> <ending line>
     ```
     - If you would like the code snippet to have syntax highlighting, add the following flag at the end of your command:
-    ```bash
-    guild post <file path> <starting line> <ending line> -H
-    ```
-    or 
-    ```bash
-    guild post <file path> <starting line> <ending line> --highlight
-    ```
+        ```bash
+        guild post <file path> <starting line> <ending line> -H
+        ```
+        or 
+        ```bash
+        guild post <file path> <starting line> <ending line> --highlight
+        ```
