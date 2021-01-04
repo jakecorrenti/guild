@@ -10,7 +10,10 @@ pub async fn run(args: &ArgMatches<'_>) -> Result<(), Box<dyn std::error::Error>
             discord::execute_webhook(&snippet[..]).await?;
         }
         Some("set") => arg_parser::set_webhook_info(args).await?,
-        _ => unreachable!(),
+        _ => {
+            eprintln!("There was no argument provided");
+            std::process::exit(1);
+        },
     }
 
     Ok(())

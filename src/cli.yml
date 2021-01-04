@@ -1,11 +1,11 @@
 name: guild
-version: "1.0"
+version: "0.1.2"
 about: "A CLI tool that allows you to submit code snippets to a discord channel"
-author: Jake Correnti <jcorrenti13@gmail.com>
+author: Jake Correnti <jcorrenti13@outlook.com>
 
 subcommands:
   - set: 
-      about: Set the required information to access the Discord channel
+      about: Set the Discord Webhook URL
 
       args: 
         - url:
