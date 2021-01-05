@@ -8,8 +8,15 @@ mod discord;
 pub async fn run(args: &ArgMatches<'_>) -> Result<(), Box<dyn std::error::Error>> {
     match args.subcommand_name() {
         Some("post") => {
+            if let Ok(exists) = arg_parser::verify_name_exists(args) {
+               if !exists {
+                   eprintln!("The name you entered doesn't exists in your list of channels");
+                   std::process::exit(1);
+               }
+            }
             let snippet = arg_parser::retrieve_snippet(args)?;
-            discord::execute_webhook(&snippet[..]).await?;
+            let name = arg_parser::get_name(args); 
+            discord::execute_webhook(&name, &snippet[..]).await?;
         }
         Some("add") => {
             db::add_channel(args).await?;

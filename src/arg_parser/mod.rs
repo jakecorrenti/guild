@@ -1,23 +1,19 @@
-use super::discord;
+use super::{db, discord};
 use clap::ArgMatches;
 use std::{error::Error, fs, process};
 
-pub async fn set_webhook_info(args: &ArgMatches<'_>) -> Result<(), Box<dyn Error>> {
-    let url_matches = args.subcommand_matches("set").unwrap();
-    let url_contents: Vec<&str> = url_matches.value_of("url").unwrap().split("/").collect();
-    let guild_data = &url_contents[url_contents.len() - 2..];
+pub fn verify_name_exists(args: &ArgMatches) -> Result<bool, Box<dyn Error>> {
+    let post_matches = args.subcommand_matches("post").unwrap();
+    let channel_name = post_matches.value_of("channel").unwrap();
 
-    let id = &guild_data.first().unwrap();
-    let token = &guild_data.last().unwrap();
-
-    if let Err(e) = discord::valid_webhook(&id, token).await {
-        eprintln!("{}", e);
-        process::exit(1);
+    let channels = db::list_channels()?;
+    for channel in channels {
+        if channel.name == channel_name {
+            return Ok(true);
+        }
     }
 
-    discord::persist_webhook_data(&id, &token)?;
-
-    Ok(())
+    Ok(false)
 }
 
 pub fn retrieve_snippet(args: &ArgMatches) -> Result<String, Box<dyn Error>> {
@@ -54,7 +50,7 @@ pub fn retrieve_snippet(args: &ArgMatches) -> Result<String, Box<dyn Error>> {
         .enumerate()
         .filter(|(idx, _)| (idx + 1) >= start && idx < &end);
 
-    let hl_header; 
+    let hl_header;
     if post_matches.is_present("hl") {
         hl_header = format!("```{}", determine_hl_type(&filename)).clone();
         snippet_lines.push(&hl_header[..]);
@@ -82,4 +78,12 @@ fn determine_hl_type(filename: &str) -> String {
     let file_components: Vec<&str> = used_file.unwrap().split(".").collect();
     let file_extension = file_components.last().unwrap();
     String::from(*file_extension)
+}
+
+pub fn get_name(args: &ArgMatches) -> String {
+    args.subcommand_matches("post")
+        .unwrap()
+        .value_of("channel")
+        .unwrap()
+        .to_string()
 }
