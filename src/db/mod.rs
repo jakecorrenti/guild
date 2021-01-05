@@ -32,7 +32,13 @@ pub async fn add_channel(args: &ArgMatches<'_>) -> Result<()> {
         std::process::exit(1);
     }
 
-    // TODO Determine if that name has already been used for another channel
+    let channels = list_channels()?;
+    channels.iter().for_each(|channel| {
+        if channel.name == name {
+            eprintln!("The name entered already exists for another Discord channel");
+            std::process::exit(1);
+        }
+    });
 
     let conn = Connection::open(&CHANNEL_DB[..])?;
     conn.execute(
@@ -43,7 +49,7 @@ pub async fn add_channel(args: &ArgMatches<'_>) -> Result<()> {
     Ok(())
 }
 
-pub fn list_channels() -> Result<()> {
+pub fn list_channels() -> Result<Vec<Channel>> {
     let conn = Connection::open(&CHANNEL_DB[..])?;
 
     let mut stmt = conn.prepare("SELECT name, id, token FROM channels")?;
@@ -55,9 +61,10 @@ pub fn list_channels() -> Result<()> {
         })
     })?;
 
-    channels.for_each(|channel| println!("{:?}", channel.unwrap()));
+    let mut ch = Vec::new();
+    channels.for_each(|channel| ch.push(channel.unwrap()));
 
-    Ok(())
+    Ok(ch)
 }
 
 pub fn remove_channel(name: &str) -> Result<()> {
