@@ -75,6 +75,7 @@ pub fn remove_channel(name: &str) -> Result<()> {
 
 pub fn rename_channel(current: &str, new: &str) -> Result<()> {
     let conn = Connection::open(&CHANNEL_DB[..])?;
+    // TODO check to make sure that the new name doesn't already exist
     conn.execute(
         "UPDATE channels
          SET name=(?2)
@@ -82,4 +83,19 @@ pub fn rename_channel(current: &str, new: &str) -> Result<()> {
          &[current, new]
     )?;
     Ok(())
+}
+
+pub fn get_webhook_data(name: &str) -> Result<(u64, String)> {
+    let conn = Connection::open(&CHANNEL_DB[..])?;
+    let mut stmt = conn.prepare("SELECT name, id, token FROM channels WHERE name=(?1)")?;
+    let channel = stmt.query_row(&[&name], |row| {
+        Ok(Channel {
+            name: row.get(0)?,
+            id: row.get(1)?,
+            token: row.get(2)?,
+        })
+    })?;
+
+    let id_to_u64 = channel.id.parse::<u64>().unwrap();
+    Ok((id_to_u64, channel.token))
 }
