@@ -24,27 +24,31 @@ cargo install guild
 1. Create a [Discord Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) in the desired server
 2. Copy the Discord Webhook URL and execute the following command in your terminal
     ```bash
-    guild set <webhook url>
+    guild add <name> <webhook url>
     ```
 3. Post your desired code snippet to the Discord server: 
     ```bash
-    guild post <file path> <starting line> <ending line>
+    guild post <name> <file path> <start> <end>
     ```
     - If you would like the code snippet to have syntax highlighting, add the following flag at the end of your command:
         ```bash
-        guild post <file path> <starting line> <ending line> -H
+        guild post <name> <file path> <start> <end> -H
         ```
         or 
         ```bash
-        guild post <file path> <starting line> <ending line> --highlight
+        guild post <name> <file path> <start> <end> --highlight
         ```
     - Example:
         ```bash
-        guild post main.c 1 5 -H
+        guild post server main.c 1 5 -H
         ```
 ## Commands
-- `set`: Set the Discord Webhook URL
-- `post`: Post a code snippet to the set Discord channel
+- `list`: List currently added Discord channels
+- `rename`: Rename an added Discord channel
+- `remove`: Remove an added Discord channel
+- `add`: Add a Discord channel in which you can send a snippet to
+- `post`: Post a code snippet to Discord
+
 ## Flags
 - `help`: See the possible commands and flags that are supported by guild
 - `highlight`: Enable syntax highlighting for the code snippet
