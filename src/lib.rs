@@ -15,7 +15,8 @@ pub async fn run(args: &ArgMatches<'_>) -> Result<(), Box<dyn std::error::Error>
             db::add_channel(args).await?;
         }
         Some("list") => {
-            db::list_channels()?;
+            let channels = db::list_channels()?;
+            channels.iter().for_each(|channel| println!("{:?}", channel));
         }
         Some("remove") => {
             let name = args
