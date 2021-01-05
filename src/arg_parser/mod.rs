@@ -1,4 +1,4 @@
-use super::{db, discord};
+use super::db;
 use clap::ArgMatches;
 use std::{error::Error, fs, process};
 
@@ -9,6 +9,18 @@ pub fn verify_name_exists(args: &ArgMatches) -> Result<bool, Box<dyn Error>> {
     let channels = db::list_channels()?;
     for channel in channels {
         if channel.name == channel_name {
+            return Ok(true);
+        }
+    }
+
+    Ok(false)
+}
+
+pub fn verify_new_name_exists(new_name: &str) -> Result<bool, Box<dyn Error>> {
+
+    let channels = db::list_channels()?;
+    for channel in channels {
+        if channel.name == new_name {
             return Ok(true);
         }
     }

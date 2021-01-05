@@ -75,7 +75,12 @@ pub fn remove_channel(name: &str) -> Result<()> {
 
 pub fn rename_channel(current: &str, new: &str) -> Result<()> {
     let conn = Connection::open(&CHANNEL_DB[..])?;
-    // TODO check to make sure that the new name doesn't already exist
+    if let Ok(exists) = super::arg_parser::verify_new_name_exists(&new) {
+        if exists {
+            eprintln!("The new name you proposed is already taken");
+            std::process::exit(1);
+        }
+    }
     conn.execute(
         "UPDATE channels
          SET name=(?2)
