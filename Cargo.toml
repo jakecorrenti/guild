@@ -1,6 +1,6 @@
 [package]
 name = "guild"
-version = "0.1.3"
+version = "0.2.0"
 authors = ["jakecorrenti <jcorrenti13@outlook.com>"]
 edition = "2018"
 license = "MIT"
