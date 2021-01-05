@@ -17,3 +17,4 @@ categories = ["command-line-utilities"]
 clap = { version = "~2.33", features = ["yaml"] }
 tokio = { version = "~0.2", features = ["full"] }
 serenity = "0.9.3"
+rusqlite = "0.24.2"
