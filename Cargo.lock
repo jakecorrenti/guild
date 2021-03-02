@@ -346,7 +346,7 @@ dependencies = [
 
 [[package]]
 name = "guild"
-version = "0.1.2"
+version = "0.2.1"
 dependencies = [
  "clap",
  "serenity",
